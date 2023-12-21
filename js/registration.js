@@ -10,15 +10,23 @@ async function registerNewUser(event) {
     event.preventDefault();
     class user{
         constructor(username, fullName, password){
-        this.username = document.getElementById("username").value;
-        this.fullName = document.getElementById("fullName").value;
-        this.password = document.getElementById("password").value;
+        this.username = username;
+        this.fullName = fullName
+        this.password = password;
         }
     }
+
+    const newUser = new UserActivation(document.getElementById("userName").value, document.getElementById("fullName").value, document.getElementById("password").value)
+    
     try {
         const response = await fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users', {
             method:'POST',
-            body: JSON.stringify(user)
+            headers: {
+                "Accept": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTcwMzE3NzA0NiwiZXhwIjoxNzAzMjYzNDQ2fQ.aMFLOT7Yj9T_YwcVNrY7Tc-iSlqafB1nT0yzgucSsGM",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newUser)
             })
         const data = await response.json();  
         console.log(`User ${user} added succesfully`)
@@ -26,5 +34,4 @@ async function registerNewUser(event) {
         catch (error) {
             console.error('Error', error)
         }
-        // window.location.href = "index.html"
     }
