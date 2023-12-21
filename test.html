@@ -18,48 +18,60 @@
         />
 
         <style>
-            .bg-img {
-                /* The image used */
-                background-image: url("img_nature.jpg");
+          /* importing font */
+          @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 
-                min-height: 380px;
+          /* css for color testing */
+          body{
+            background-color: #E9DAC5 ;
+          }
+          /* css for custom header */
+          .bg-img {              
+              /* The image used */
+              background-image: url("images/pokedex_header.png");
 
-                /* Center and scale the image nicely */
-                background-position: left;
-                background-repeat: no-repeat;
-                background-size: cover;
+              height: 250px;
 
-                /* Needed to position the navbar */
-                position: relative;
-                }
+              /* Center and scale the image nicely */
+              background-position: left;
+              background-repeat: no-repeat;
+              background-size: cover;
 
-                /* Position the navbar container inside the image */
-                .container {
-                position: absolute;
-                margin: 20px;
-                width: auto;
-                }
+              /* Needed to position the navbar */
+              position: relative;
+              }
 
-                /* The navbar */
-                .topnav {
-                overflow: hidden;
-                background-color: #333;
-                }
+              /* Position the navbar container inside the image */
+              .container {
+              position: absolute;
+              margin: 20px;
+              width: auto;
+              }
 
-                /* Navbar links */
-                .topnav a {
-                float: left;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-                }
+              /* The navbar */
+              .topnav {
+              overflow: hidden;
+              float: left;
+              background-color: #33333300;
+              }
 
-                .topnav a:hover {
-                background-color: #ddd;
-                color: black;
-                }
+              /* Navbar links */
+              .topnav a {
+              float: left;
+              color: #F8ECBA;
+              text-align: center;
+              padding: 27px 16px;
+              text-decoration: none;
+              font-size: 30px;
+              font-family: "Pixelify Sans";
+              }
+
+              .topnav a:hover {
+              background-color: #313131;
+              color: white;
+              }
+
+            
         </style>
     </head>
     <!-- <header>
@@ -107,6 +119,7 @@
     </header> -->
     <body>
         <header>
+          <!-- navbar version for image replacement -->
             <div class="bg-img sticky-top">
                 <div class="container-fluid">
                   <div class="topnav">
@@ -117,11 +130,12 @@
                   </div>
                 </div>
             </div>
-            <nav class="navbar  bg-body-tertiary">
+            <!-- normal navbar-->
+            <!-- <nav class="navbar  bg-body-tertiary">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">Sticky top</a>
                 </div>
-              </nav>
+              </nav> -->
         </header>
         <main></main>
         <footer>
