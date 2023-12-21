@@ -7,24 +7,36 @@ function init(){
 }
 
 async function registerNewUser(event) {
-    event.preventDefault();
-    class user{
-        constructor(username, fullName, password){
-        this.username = document.getElementById("username").value;
-        this.fullName = document.getElementById("fullName").value;
-        this.password = document.getElementById("password").value;
-        }
-    }
-    try {
-        const response = await fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users', {
-            method:'POST',
-            body: JSON.stringify(user)
+    event.preventDefault()
+    
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    if (password != confirmPassword) {
+        alert('Passwords mismatch!');
+        // Add your form submission logic here
+    } 
+    else {
+        try {
+            const response = await fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users', {
+                method:'POST',
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: document.getElementById("userName").value,
+                    fullName: document.getElementById("fullName").value,
+                    password: document.getElementById("password").value,
+                })
             })
-        const data = await response.json();  
-        console.log(`User ${user} added succesfully`)
-    }
+            const data = await response.json();  
+            alert(`User added succesfully`)
+            console.log(data);
+            window.location.href = "login.html"
+        }
         catch (error) {
             console.error('Error', error)
         }
-        // window.location.href = "index.html"
     }
+}
