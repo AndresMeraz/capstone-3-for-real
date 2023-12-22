@@ -2,8 +2,10 @@
 
 "use strict";
 
-const logoutBtn = document.getElementById("logoutBtn");
-logoutBtn.addEventListener("click", logout);
+function callLogout(){
+    const logoutBtn = document.getElementById("logoutBtn");
+    logoutBtn.addEventListener("click", logout);
+}
 
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 // Backup server:   https://microbloglite.onrender.com
@@ -46,7 +48,7 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.href= "posts.html";  // redirect
 
             return loginData;
         });
