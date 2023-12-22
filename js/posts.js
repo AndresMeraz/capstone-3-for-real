@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const postForm = document.getElementById("postForm");
     const postText = document.getElementById("postText");
     const postResult = document.getElementById("postResult");
-
+    
     postForm.addEventListener("submit", function (e) {
         e.preventDefault();
-
+        const loginData = getLoginData();
+        
+        console.log(loginData);
         const formData = {
             text: postText.value
         };
@@ -19,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
             method: "POST",
             headers: {
                 "Accept": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTcwMzE3NzA0NiwiZXhwIjoxNzAzMjYzNDQ2fQ.aMFLOT7Yj9T_YwcVNrY7Tc-iSlqafB1nT0yzgucSsGM",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${loginData.token}`,
             },
             body: JSON.stringify(formData)
         })
@@ -49,13 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const postList = document.getElementById("postList");
+    const loginData = getLoginData();
 
     // Fetch posts from the API endpoint
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0", {
         method: "GET",
         headers: {
             "Accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTcwMzE3NzA0NiwiZXhwIjoxNzAzMjYzNDQ2fQ.aMFLOT7Yj9T_YwcVNrY7Tc-iSlqafB1nT0yzgucSsGM"
+            "Authorization": `Bearer ${loginData.token}`,
         }
     })
     .then(response => response.json())
@@ -87,3 +90,14 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error fetching data:", error);
     });
 });
+
+function displayProfile() {
+    let profile = document.getElementById("profile")
+    const loginData = getLoginData();
+    let profileName = loginData.username;
+    profile.innerHTML = profileName;
+    console.log(loginData);
+
+
+}
+displayProfile()
