@@ -25,7 +25,7 @@
           body{
             background-color: #E9DAC5 ;
             width: 100%;
-            max-height: 90%;
+            /* max-height: 90%; */
           }
 
           main{
@@ -51,36 +51,58 @@
 
           /* Position the navbar container inside the image */
           .navbar {
+          display: flex;
           float: left;
-          background-color: black;
+          background-color: rgba(0, 0, 0, 0);
           position: relative;
           padding: 2%;
-          margin-top: 1%;
-          margin-left: 5%;
+          /* margin: auto; */
+          margin-left: 3%;
+          align-items: center;
+          max-width: fit-content;
+          /* min-height: fit-content;
+          min-width: 30%; */
           }
 
-          /* Navbar links */
-          .navbar a {
+          .navbar-brand {
           float: left;
-          color: #F8ECBA;
           text-align: center;
           /* padding: 10px; */
           padding-inline: 10px;
           text-decoration: none;
-          font-size: 20px;
+          font-size: 200%;
           position: relative;
+          /* size: auto; */
+
+          }
+
+          
+
+          /* Navbar links */
+          #navlink a{
+          float: left;
+          color: #F8ECBA;
+          text-align: center;
+          padding-inline: 10px;
+          max-width: fit-content;
+          text-decoration: none;
+          font-size: 200%;
+          /* position: relative; */
+          /* size: auto; */
           font-family: "Pixelify Sans";
           }
 
-          .container-fluid {
-            padding-bottom: 2%;
-            padding-left: 0;
-          }
-
-          .navbar a:hover {
+          #navlink a:hover {
           background-color: #313131;
           color: white;
           /* padding: %; */
+          }
+
+          .container-fluid {
+            display: flex;
+            padding-bottom: 2%;
+            padding-left: 0;
+            align-items: center;
           }
 
         </style>
@@ -92,11 +114,15 @@
                 <div class="bg-img sticky-top">
                   <div class="container-fluid">
                     <nav class="navbar">
-                      <a class="navbar-brand" href="#">EE</a>
-                      <a href="#home">Home</a>
-                      <a href="#news">News</a>
-                      <a href="#contact">Contact</a>
-                      <a href="#about">About</a>
+                      <a class="navbar-brand" href="#">
+                        <img src="images/pokeball.png" height="40px">
+                      </a>
+                      <div id="navlink">
+                        <a href="#home">Home</a>
+                        <a href="#news">News</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#about">About</a>
+                      </div>
                     </nav>
                   </div> 
                 </div>
