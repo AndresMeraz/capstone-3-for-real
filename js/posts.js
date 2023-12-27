@@ -97,7 +97,5 @@ function displayProfile() {
     let profileName = loginData.username;
     profile.innerHTML = profileName;
     console.log(loginData);
-
-
 }
 displayProfile()
