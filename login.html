@@ -24,29 +24,170 @@
     <script src="js/auth.js"></script>
     <script>
         if (isLoggedIn() === true) window.location.replace("/posts");
+
+        
+
     </script>
+    <style>
+           /* importing font */
+           @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+
+/* css for color testing */
+body{
+  background-color: #E9DAC5 ;
+  width: 100%;
+  font-family: 'Pixelify Sans';
+  color: silver;
+}
+
+form {
+    height: 40vw;
+    width: 20vw;
+    padding: 8%;
+}
+main{
+  margin: 10%;
+  position: relative;
+}
+
+/* css for custom header */
+.bg-img {              
+  /* The image used */
+  background-image: url("images/pokedex_header.png");
+  /* Center and scale the image nicely */
+  display: flex;
+  position: absolute;
+  top: -20px;
+  min-height: inherit;
+  overflow: visible;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0%;
+  width: 100%;
+}
+
+img.nav-image {
+    height: 2vw;
+}
+
+
+/* Position the navbar container inside the image */
+.navbar {
+display: flex;
+float: left;
+background-color: rgba(0, 0, 0, 0);
+position: relative;
+padding: 2%;
+
+/* margin: auto; */
+font-size: 3vw;
+align-items: center;
+/* max-width: fit-content; */
+/* min-height: fit-content;
+min-width: 30%; */
+}
+
+.navbar-brand {
+float: left;
+text-align: center;
+/* padding: 10px; */
+padding-inline: 10px;
+text-decoration: none;
+/* font-size: 200%; */
+position: relative;
+/* size: auto; */
+
+}
+
+/* Navbar links */
+#navlink a{
+/* float: left; */
+color: #F8ECBA;
+text-align: center;
+padding-inline: 10px;
+max-width: 100%;
+text-decoration: none;
+/* font-size: 200%; */
+/* position: relative; */
+/* size: auto; */
+font-family: "Pixelify Sans";
+}
+
+#navlink a:hover {
+background-color: #313131;
+color: white;
+/* padding: %; */
+}
+
+.container-fluid {
+  display: flex;
+  padding-bottom: 2%;
+  padding-left: 0;
+  align-items: center;
+}
+
+.screen-bg {
+    background-image: url("images/screen.png");
+    background-repeat: no-repeat;
+    height: 33vw;
+    width: 30vw;
+    background-size: cover;
+
+    
+
+}
+
+
+
+    </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        <header>
+            <!-- navbar version for image replacement -->
+                  <div class="container-fluid">
+                    <div class="bg-img sticky-top">
+                      <div class="container-fluid">
+                        <nav class="navbar">
+                          <a class="navbar-brand" href="#">
+                              <img class="nav-image" src="images/red_button.png">
+                              <img class="nav-image" src="images/green_button.png">
+                              <img class="nav-image" src="images/yellow_button.png">
+                        </a>
+                          <div id="navlink">
+                            <a href="#home">Home</a>
+                            <a href="#news">News</a>
+                            <a href="#contact">Contact</a>
+                            <a href="#about">About</a>
+                          </div>
+                        </nav>
+                      </div> 
+                    </div>
+                  </div>
+          </header>
     </header>
 
     <main>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+        <div class="screen-bg"> 
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+            <form id="login">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" minlength="3">
+                </div>
+    
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" minlength="6">
+                </div>
+    
+                <button id="loginButton" type="submit">Login</button>
+            </form>
+        </div>
 
-            <button id="loginButton" type="submit">Login</button>
-        </form>
 
     </main>
 
