@@ -16,7 +16,9 @@
             crossorigin="anonymous"
             />
             <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/registration.css">
+
+            <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+            <script src="js/auth.js"></script>
     </head>
 
     <body>
@@ -24,23 +26,14 @@
             <!-- place navbar here -->
         </header>
         <main>
-            <form id="registrationForm">
-                Username:<input type="text" id="userName" minlength="3">
-                Name:<input type="text" id="fullName">
-                Email:<input type="text" id="email">
-                Password:<input type="text" id="password" minlength="6">
-                Confirm Password:<input type="text" id="confirmPassword">
-                <button type="submit" id="regBtn">Register</button>
-
-                
-
-            </form>
+            <div id="postList" class="mt-4">
+                <!-- Posts will be displayed here -->
+            </div>
         </main>
         <footer>
             <!-- place footer here -->
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
-        <script src="js/registration.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -52,5 +45,6 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        <script src="js/profile.js"></script>
     </body>
 </html>

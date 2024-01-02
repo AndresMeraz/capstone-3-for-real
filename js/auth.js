@@ -2,6 +2,11 @@
 
 "use strict";
 
+function callLogout(){
+    const logoutBtn = document.getElementById("logoutBtn");
+    logoutBtn.addEventListener("click", logout);
+}
+
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 // Backup server:   https://microbloglite.onrender.com
 
@@ -43,7 +48,7 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.href= "posts.html";  // redirect
 
             return loginData;
         });
@@ -54,7 +59,7 @@ function login (loginData) {
 // which you may include in various pages in your app. Again, READ this
 // function and you will probably want to re-use parts of it for other
 // `fetch()` requests you may need to write.
-function logout () {
+function logout() {
     const loginData = getLoginData();
 
     // GET /auth/logout
@@ -78,6 +83,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page
+            window.location.assign("login.html");  // redirect back to landing page
         });
 }
