@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="css/global.css">
@@ -18,132 +14,117 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="css/landing.css">
 
-    <title>Login to the Microblog Network!</title>
+    <title>PokePosts</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="js/auth.js"></script>
-    <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
-
-        
-
-    </script>
     <style>
-           /* importing font */
-           @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 
-/* css for color testing */
-body{
-  background-color: #E9DAC5 ;
-  width: 100%;
-  font-family: 'Pixelify Sans';
-  color: silver;
-}
+        /* importing font */
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 
-form {
-    height: 40vw;
-    width: 20vw;
-    padding: 8%;
-}
-main{
-  margin: 10%;
-  position: relative;
-}
+        /* css for color testing */
+        body{
+            background-color: #E9DAC5 ;
+            width: 100%;
+            font-family: 'Pixelify Sans';
+            color: silver;
+        }
 
-/* css for custom header */
-.bg-img {              
-  /* The image used */
-  background-image: url("images/pokedex_header.png");
-  /* Center and scale the image nicely */
-  display: flex;
-  position: absolute;
-  top: -20px;
-  min-height: inherit;
-  overflow: visible;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0%;
-  width: 100%;
-}
+        form {
+            height: 40vw;
+            width: 20vw;
+            padding: 8%;
+        }
 
-img.nav-image {
-    height: 2vw;
-}
+        main{
+            margin: 10%;
+            position: relative;
+        }
 
+        /* css for custom header */
+        .bg-img {              
+            background-image: url("images/pokedex_header.png");
+            display: flex;
+            position: absolute;
+            top: -20px;
+            min-height: inherit;
+            overflow: visible;
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0%;
+            width: 100%;
+        }
 
-/* Position the navbar container inside the image */
-.navbar {
-display: flex;
-float: left;
-background-color: rgba(0, 0, 0, 0);
-position: relative;
-padding: 2%;
+        img.nav-image {
+            height: 2vw;
+        }
 
-/* margin: auto; */
-font-size: 3vw;
-align-items: center;
-/* max-width: fit-content; */
-/* min-height: fit-content;
-min-width: 30%; */
-}
+        /* Position the navbar container inside the image */
+        .navbar {
+            display: flex;
+            float: left;
+            background-color: rgba(0, 0, 0, 0);
+            position: relative;
+            padding: 2%;
 
-.navbar-brand {
-float: left;
-text-align: center;
-/* padding: 10px; */
-padding-inline: 10px;
-text-decoration: none;
-/* font-size: 200%; */
-position: relative;
-/* size: auto; */
+            /* margin: auto; */
+            font-size: 3vw;
+            align-items: center;
+            /* max-width: fit-content; */
+            /* min-height: fit-content;
+            min-width: 30%; */
+        }
 
-}
+        .navbar-brand {
+            float: left;
+            text-align: center;
+            /* padding: 10px; */
+            padding-inline: 10px;
+            text-decoration: none;
+            /* font-size: 200%; */
+            position: relative;
+            /* size: auto; */
+        }
 
-/* Navbar links */
-#navlink a{
-/* float: left; */
-color: #F8ECBA;
-text-align: center;
-padding-inline: 10px;
-max-width: 100%;
-text-decoration: none;
-/* font-size: 200%; */
-/* position: relative; */
-/* size: auto; */
-font-family: "Pixelify Sans";
-}
+        /* Navbar links */
+        #navlink a{
+            /* float: left; */
+            color: #F8ECBA;
+            text-align: center;
+            padding-inline: 10px;
+            max-width: 100%;
+            text-decoration: none;
+            /* font-size: 200%; */
+            /* position: relative; */
+            /* size: auto; */
+            font-family: "Pixelify Sans";
+        }
 
-#navlink a:hover {
-background-color: #313131;
-color: white;
-/* padding: %; */
-}
+        #navlink a:hover {
+            background-color: #313131;
+            color: white;
+            /* padding: %; */
+        }
 
-.container-fluid {
-  display: flex;
-  padding-bottom: 2%;
-  padding-left: 0;
-  align-items: center;
-}
+        .container-fluid {
+            display: flex;
+            padding-bottom: 2%;
+            padding-left: 0;
+            align-items: center;
+        }
 
-.screen-bg {
-    background-image: url("images/screen.png");
-    background-repeat: no-repeat;
-    height: 33vw;
-    width: 30vw;
-    background-size: cover;
-
-    
-
-}
-
-
-
+        .screen-bg {
+            background-image: url("images/screen.png");
+            background-repeat: no-repeat;
+            height: 33vw;
+            width: 30vw;
+            background-size: cover;
+        }
     </style>
-</head>
-<body>
 
+</head>
+
+<body>
     <header>
         <header>
             <!-- navbar version for image replacement -->
@@ -151,16 +132,16 @@ color: white;
                     <div class="bg-img sticky-top">
                       <div class="container-fluid">
                         <nav class="navbar">
-                          <a class="navbar-brand" href="#">
+                          <a class="navbar-brand" href="login.html">
                               <img class="nav-image" src="images/red_button.png">
                               <img class="nav-image" src="images/green_button.png">
                               <img class="nav-image" src="images/yellow_button.png">
                         </a>
                           <div id="navlink">
-                            <a href="#home">Home</a>
-                            <a href="#news">News</a>
-                            <a href="#contact">Contact</a>
-                            <a href="#about">About</a>
+                            <a href="login.html">Home</a>
+                            <a href="registration.html">Registration</a>
+                            <a href="post.html">Posts</a>
+                            <a href="profile.html">Profile</a>
                           </div>
                         </nav>
                       </div> 
@@ -170,7 +151,6 @@ color: white;
     </header>
 
     <main>
-
         <div class="screen-bg"> 
 
             <form id="login">
@@ -187,13 +167,31 @@ color: white;
                 <button id="loginButton" type="submit">Login</button>
             </form>
         </div>
-
-
     </main>
 
-    <footer></footer>
+    <footer>
 
-    <!-- Page-specific code -->
-    <script src="css/landing.js"></script>
+        <!-- place footer here -->
+        
+        <!-- Page-specific code -->
+        <script src="css/landing.js"></script>
+        <script src="js/auth.js"></script>
+
+        <script>
+            if (isLoggedIn() === true) window.location.replace("/posts");
+            </script>
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous">
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+
+    </footer>
+
 </body>
 </html>
