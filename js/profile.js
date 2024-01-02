@@ -29,29 +29,38 @@ function findMatching(posts){
     let username = loginData.username;
     console.log(username);
 
-        // Loop through the posts and display them
-        let matching = posts.filter(user => user.username == username)
-        console.log(matching);
+    // Loop through the posts and display them
+    let matching = posts.filter(user => user.username == username)
+    console.log(matching);
 
-        matching.forEach(matching => {
-            const postCard = document.createElement("div");
-            postCard.classList.add("card", "mb-3");
+    matching.forEach(matching => {
+        const postCard = document.createElement("div");
+        postCard.classList.add("card", "mb-3");
 
-            const cardBody = document.createElement("div");
-            cardBody.classList.add("card-body");
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-            const postText = document.createElement("p");
-            postText.classList.add("card-text");
-            postText.textContent = matching.text;
+        const postText = document.createElement("p");
+        postText.classList.add("card-text");
+        postText.textContent = matching.text;
 
-            const postUsername = document.createElement("p");
-            postUsername.classList.add("card-text", "text-muted");
-            postUsername.textContent = `Posted by ${matching.username} on ${new Date(matching.createdAt).toLocaleString()}`;
+        const postUsername = document.createElement("p");
+        postUsername.classList.add("card-text", "text-muted");
+        postUsername.textContent = `Posted by ${matching.username} on ${new Date(matching.createdAt).toLocaleString()}`;
 
-            cardBody.appendChild(postText);
-            cardBody.appendChild(postUsername);
-            postCard.appendChild(cardBody);
+        const deletePost = document.createElement("button");
+        deletePost.classList.add("deleteBtn");
+        deletePost.id = "deleteBtn";
+        deletePost.textContent = "Delete"
 
-            postList.appendChild(postCard); 
-        });
-    }
+
+        cardBody.appendChild(postText);
+        cardBody.appendChild(postUsername);
+        cardBody.appendChild(deletePost);
+        postCard.appendChild(cardBody);
+        
+
+
+        postList.appendChild(postCard); 
+    });
+}
