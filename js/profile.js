@@ -29,29 +29,58 @@ function findMatching(posts){
     let username = loginData.username;
     console.log(username);
 
-        // Loop through the posts and display them
-        let matching = posts.filter(user => user.username == username)
-        console.log(matching);
+    // Loop through the posts and display them
+    let matching = posts.filter(user => user.username == username)
+    console.log(matching);
 
-        matching.forEach(matching => {
-            const postCard = document.createElement("div");
-            postCard.classList.add("card", "mb-3");
+    matching.forEach(matching => {
+        const postCard = document.createElement("div");
+        postCard.classList.add("card", "mb-3");
 
-            const cardBody = document.createElement("div");
-            cardBody.classList.add("card-body");
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
 
-            const postText = document.createElement("p");
-            postText.classList.add("card-text");
-            postText.textContent = matching.text;
+        const postText = document.createElement("p");
+        postText.classList.add("card-text");
+        postText.textContent = matching.text;
 
-            const postUsername = document.createElement("p");
-            postUsername.classList.add("card-text", "text-muted");
-            postUsername.textContent = `Posted by ${matching.username} on ${new Date(matching.createdAt).toLocaleString()}`;
+        const postUsername = document.createElement("p");
+        postUsername.classList.add("card-text", "text-muted");
+        postUsername.textContent = `Posted by ${matching.username} on ${new Date(matching.createdAt).toLocaleString()}`;
 
-            cardBody.appendChild(postText);
-            cardBody.appendChild(postUsername);
-            postCard.appendChild(cardBody);
+        const deletePost = document.createElement("button");
+        deletePost.classList.add("deleteBtn");
+        deletePost.id = `${matching._id}`;
+        deletePost.textContent = "Delete"
+        deletePost.addEventListener("click", function(event){
+            let postID = event.currentTarget.id;
+            console.log(postID)
+            deleteThisPost(postID)
+        })
 
-            postList.appendChild(postCard); 
-        });
-    }
+
+        cardBody.appendChild(postText);
+        cardBody.appendChild(postUsername);
+        cardBody.appendChild(deletePost);
+        postCard.appendChild(cardBody);
+        
+        postList.appendChild(postCard);
+    });
+}
+
+function deleteThisPost(postID){
+    let postId = postID;
+    const loginData = getLoginData();
+    console.log(postId)
+    let baseURL = `http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`
+        fetch(baseURL, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                "Authorization": `Bearer ${loginData.token}`,
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => console.log("Post Deleted Successfully"))
+            .catch((error) => console.error(error))
+}
