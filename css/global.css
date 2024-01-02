@@ -108,7 +108,7 @@
         }
 
         .screen-bg {
-            background-image: url("images/screen.png");
+            background-image: url("../images/screen.png");
             background-repeat: no-repeat;
             height: 33vw;
             width: 30vw;
