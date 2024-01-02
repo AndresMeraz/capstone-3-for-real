@@ -60,12 +60,15 @@
                     </div>
                     
                     <button id="loginButton" type="submit">Login</button>
+                    
                 </form>
+                <button id="showWelcomeButton">Info</button>
+
             </div>
-            
-        </div>
             <div class="typewriter">
-            <p id="welcomeMessage"></p>
+                <p id="welcomeMessage"></p>
+            
+      
         </div>
         
         <script>
@@ -82,7 +85,10 @@
                 setTimeout(() => textTypingEffect(element, text, i + 1), 10)
             }
 
-            textTypingEffect(welcomeMessage, text)
+            document.getElementById("showWelcomeButton").addEventListener("click", function() {
+            welcomeMessage.textContent = ""; // Clear existing text
+            textTypingEffect(welcomeMessage, text);
+            });
         </script>
 
     </main>

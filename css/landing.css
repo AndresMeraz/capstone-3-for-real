@@ -1,7 +1,75 @@
 /* Landing Page CSS */
 
+          /* importing font */
+          @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+
 form {
     height: 40vw;
     width: 20vw;
     padding: 8%;
+}
+
+#loginBox {
+    display: flex;
+}
+
+/* .screen-bg {
+    flex: 1;
+} */
+#showWelcomeButton {
+
+
+/* CSS */
+ position: absolute;
+ top: 61.5vh;
+ left: 42.5vh;
+  background-color: #c20000;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  /* size: 1vh; */
+  min-width: 9%;
+  min-height: 9%;
+  size: -3vh; 
+    font-weight: 600; 
+   font-size: 20px;  
+   padding: 0 18px;
+  float: right;
+  /* line-height: 50px;  */
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+.showWelcomeButton:hover {
+  background-color: #fff;
+}
+
+.showWelcomeButton:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .showWelcomeButton {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+.typewriter {
+    flex: 1;
+    padding: 20px;
+    margin-left: 30px;
+    text-align: center;
+    color: black;
+    font-size: large;
+    font-family: 'Pixelify Sans';
+    letter-spacing: 3px;
+    font-size: 1.4em;
 }
