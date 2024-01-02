@@ -61,6 +61,28 @@
                 <button id="loginButton" type="submit">Login</button>
             </form>
         </div>
+
+        <div class="typewriter">
+            <p id="welcomeMessage"></p>
+        </div>
+
+        <script>
+            const welcomeMessage = document.getElementById("welcomeMessage");
+            const text = "Greetings, Trainer, and welcome to Pokeposts - the ultimate hub for sharing every thrilling step of your Pokemon journey! Connect with fellow trainers as we create a vibrant community dedicated to all things Pokemon. Whether you're a seasoned Pokemon Master or just starting your journey, Pokeposts is the place to be!"
+
+            function textTypingEffect(element, text, i=0){
+                element.textContent += text[i];
+
+                if(i === text.length - 1){
+                    return;
+                }
+
+                setTimeout(() => textTypingEffect(element, text, i + 1), 10)
+            }
+
+            textTypingEffect(welcomeMessage, text)
+        </script>
+
     </main>
 
     <footer>
