@@ -1,1 +1,7 @@
 /* Landing Page CSS */
+
+form {
+    height: 40vw;
+    width: 20vw;
+    padding: 8%;
+}

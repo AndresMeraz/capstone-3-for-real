@@ -11,122 +11,11 @@
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="css/global.css">
 
-    <!-- Page-specific CSS -->
+    <!--! Page-specific CSS -->
     <link rel="stylesheet" href="css/landing.css">
 
     <title>PokePosts</title>
 
-    <style>
-
-        /* importing font */
-        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-
-        /* css for color testing */
-        body{
-            background-color: #E9DAC5 ;
-            width: 100%;
-            font-family: 'Pixelify Sans';
-            color: silver;
-        }
-
-        form {
-            height: 40vw;
-            width: 20vw;
-            padding: 8%;
-        }
-
-        main{
-            margin: 10%;
-            position: relative;
-        }
-
-        /* css for custom header */
-        .bg-img {              
-            background-image: url("images/pokedex_header.png");
-            display: flex;
-            position: absolute;
-            top: -20px;
-            min-height: inherit;
-            overflow: visible;
-            background-position: left;
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0%;
-            width: 100%;
-        }
-
-        img.nav-image {
-            height: 2vw;
-        }
-
-        /* Position the navbar container inside the image */
-        .navbar {
-            display: flex;
-            float: left;
-            background-color: rgba(0, 0, 0, 0);
-            position: relative;
-            padding: 2%;
-
-            /* margin: auto; */
-            font-size: 3vw;
-            align-items: center;
-            /* max-width: fit-content; */
-            /* min-height: fit-content;
-            min-width: 30%; */
-        }
-
-        .navbar-brand {
-            float: left;
-            text-align: center;
-            /* padding: 10px; */
-            padding-inline: 10px;
-            text-decoration: none;
-            /* font-size: 200%; */
-            position: relative;
-            /* size: auto; */
-        }
-
-        /* Navbar links */
-        #navlink a{
-            /* float: left; */
-            color: #F8ECBA;
-            text-align: center;
-            padding-inline: 10px;
-            max-width: 100%;
-            text-decoration: none;
-            /* font-size: 200%; */
-            /* position: relative; */
-            /* size: auto; */
-            font-family: "Pixelify Sans";
-        }
-
-        #navlink a:hover {
-            background-color: #313131;
-            color: white;
-            /* padding: %; */
-        }
-
-        .container-fluid {
-            display: flex;
-            padding-bottom: 2%;
-            padding-left: 0;
-            align-items: center;
-        }
-
-        .screen-bg {
-            background-image: url("images/screen.png");
-            background-repeat: no-repeat;
-            height: 33vw;
-            width: 30vw;
-            background-size: cover;
-        }
-    </style>
-
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="js/auth.js"></script>
-    <script>
-        if (isLoggedIn() === true) window.location.assign("posts.html");
-    </script>
 </head>
 
 <body>
@@ -178,7 +67,7 @@
 
         <!-- place footer here -->
         
-        <!-- Page-specific code -->
+        <!--! Page-specific code -->
         <script src="css/landing.js"></script>
         <script src="js/auth.js"></script>
 
