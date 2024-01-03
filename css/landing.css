@@ -7,3 +7,8 @@ form {
     width: 20vw;
     padding: 8%;
 }
+
+div#profile {
+    text-align: center;
+    font-size: 3.6vh;
+    }

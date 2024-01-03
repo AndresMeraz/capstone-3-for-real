@@ -59,5 +59,18 @@ div.card-body {
 
 }
 
-form#postForm.mt-4 {
+textarea#postText.form-control {
+    border: 3px solid #FF0808; 
+    max-width: 80%;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.btn-primary {
+    margin-left: 10%;
+    color: black;
+    background-color: #FCF5EA;
+    --bs-btn-hover-bg: #FF0808;
+    --bs-btn-border-color: #FF0808;
+    --bs-btn-hover-border-color: black;
 }
