@@ -103,13 +103,19 @@ function getProfileInfo() {
         .then((response) => response.json())
         .then((data) => displayProfile(data))
 }
+
 function displayProfile(data){
     console.log(data);
     let userName = data.username;
     console.log(userName);
     let region = getRegion(data.bio);
     console.log(region);
-
+    let id = createID();
+    console.log(id);
+    let money = getThatBag();
+    console.log(money);
+    let pokedex = getPokedex();
+    console.log(pokedex);
 }
 
 function getRegion(region){
@@ -143,6 +149,24 @@ function getRegion(region){
     else{
         return "Undisclosed"
     }
+}
+
+function createID(min, max) {
+    min = 1000;
+    max = 99999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getThatBag(min, max) {
+    min = 100;
+    max = 99999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getPokedex(min, max) {
+    min = 1;
+    max = 999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 getProfileInfo();
