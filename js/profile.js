@@ -27,11 +27,11 @@ function findMatching(posts){
     const postList = document.getElementById("postList");
     const loginData = getLoginData();
     let username = loginData.username;
-    console.log(username);
+    // console.log(username);
 
     // Loop through the posts and display them
     let matching = posts.filter(user => user.username == username)
-    console.log(matching);
+    // console.log(matching);
 
     matching.forEach(matching => {
         const postCard = document.createElement("div");
@@ -84,3 +84,65 @@ function deleteThisPost(postID){
             .then((data) => console.log("Post Deleted Successfully"))
             .catch((error) => console.error(error))
 }
+
+function getProfileInfo() {
+    const loginData = getLoginData();
+    // let profile = document.getElementById("profile");
+    // console.log(loginData);
+    let profileName = loginData.username;
+    // profile.innerHTML = profileName;
+
+    let baseURL = `http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${profileName}`;
+
+    fetch(baseURL,{
+        method: "GET",
+        headers: { 
+            Authorization: `Bearer ${loginData.token}`,
+        }
+    })
+        .then((response) => response.json())
+        .then((data) => displayProfile(data))
+}
+function displayProfile(data){
+    console.log(data);
+    let userName = data.username;
+    console.log(userName);
+    let region = getRegion(data.bio);
+    console.log(region);
+
+}
+
+function getRegion(region){
+    if(region == "Kanto"){
+        return "Kanto"
+    }
+    else if(region == "Johto"){
+        return "Johto"
+    }
+    else if(region == "Hoenn"){
+        return "Hoenn"
+    }
+    else if(region == "Sinnoh"){
+        return "Sinnoh"
+    }
+    else if(region == "Unova"){
+        return "Unova"
+    }
+    else if(region == "Kalos"){
+        return "Kalos"
+    }
+    else if(region == "Alola"){
+        return "Alola"
+    }
+    else if(region == "Galar"){
+        return "Galar"
+    }
+    else if(region == "Paldea"){
+        return "Paldea"
+    }
+    else{
+        return "Undisclosed"
+    }
+}
+
+getProfileInfo();
