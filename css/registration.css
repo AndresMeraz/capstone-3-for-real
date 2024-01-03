@@ -1,0 +1,10 @@
+main{
+    margin: 10%;
+    position: relative;
+}
+
+form {
+    height: 40vw;
+    width: 20vw;
+    padding: 8%;
+}
