@@ -28,59 +28,12 @@
             font-family: 'Pixelify Sans';
             color: silver;
         }
-
-
-        /* main{
->>>>>>> ee0c2cb648c7a39cae8485a2deccf88a247ad569
+        
+        main{
             margin: 10%;
             position: relative;
-        } */
-.center {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%,-50%)
-
-}
-        .loginBox {
-            position: absolute;
-            margin-top: 5%;
-            top: -150%;
-            left: 50%;
-            opacity: 0;
-            transform:translate(-50%,-50%) scale(1.25);
-            transition: top 0ms ease-in-out 200ms,
-                        opacity 200ms ease-in-out 0ms,
-                        transform 20ms ease-in-out 0ms;
         }
 
-        .loginBox.active {
-            top: 50%;
-            opacity: 1;
-            transform:translate(-50%,-50%) scale(1);
-            transition: top 0ms ease-in-out 200ms,
-                        opacity 0ms ease-in-out 0ms,
-                        transform 20ms ease-in-out 0ms;
-        }
-        
-
-        .loginBox .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 15px;
-            height: 15px;
-            background: #888;
-            color: #eee;
-            text-align: center;
-            line-height: 15px;
-            border-radius: 15px;
-            cursor: pointer;  
-        }
-
-        .loginBox .form-element {
-            margin: 15px 0px;
-        }
         /* css for custom header */
         .bg-img {              
             background-image: url("../images/pokedex_header.png");
@@ -96,7 +49,6 @@
             width: 100%;
         }
 
-        
         img.nav-image {
             height: 2vw;
         }
