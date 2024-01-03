@@ -1,5 +1,3 @@
-/* auth.js provides LOGIN-related functions */
-
 "use strict";
 
 function callLogout(){
