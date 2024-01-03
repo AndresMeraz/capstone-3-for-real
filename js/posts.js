@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginData = getLoginData();
 
     // Fetch posts from the API endpoint
-    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0", {
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=10&offset=0", {
         method: "GET",
         headers: {
             "Accept": "application/json",
