@@ -1,5 +1,23 @@
 "use strict"
 
+window.onload = function() {
+    //placing the card
+    const canvas = document.getElementById("trainerCanvas");
+    const ctx = canvas.getContext("2d");
+    const img = document.getElementById("trainerCard");
+    ctx.drawImage(img, 0, 0);
+
+    
+    //adding text
+    ctx.font = "24px Roboto";
+    ctx.fillText("IDNo. " + "Trainer ID", 263, 42);
+    ctx.fillText("NAME: " + "Trainer Name", 45, 84);
+    ctx.fillText("Bio Information Here", 45, 138);
+    ctx.fillText("MONEY: $" + "12345", 45, 170);
+    ctx.fillText("POKEDéX: " + "12345", 45, 202);
+
+    draw(ctx);
+};
 
 function getLoginData(){
     const loginJSON = window.localStorage.getItem("login-data");
@@ -170,3 +188,89 @@ function getPokedex(min, max) {
 }
 
 getProfileInfo();
+
+
+            
+            function draw(ctx) {
+                //coordinates based on card dimensions
+                let pokegridW = 28;
+                let pokegridH = 222;
+    
+                let offsetW = 84;
+                let offsetH = 68;
+
+                function loadImage(src) {
+                    let img = new Image();
+                    img.src = src;
+                    return img;
+                }
+                
+                // adding pokemon
+                let pokemon1 = new Image();
+                pokemon1.onload = function() {
+                    ctx.drawImage(pokemon1, pokegridW, pokegridH);
+                };
+                pokemon1.src = "pokehashLibs/pokemons/pokemon1.png";
+                
+                let pokemon2 = new Image();
+                pokemon2.onload = function() {
+                    ctx.drawImage(pokemon2, pokegridW + (offsetW), pokegridH);
+                };
+                pokemon2.src = "pokehashLibs/pokemons/pokemon2.png";
+  
+                let pokemon3 = new Image();
+                pokemon3.onload = function() {
+                    ctx.drawImage(pokemon3, pokegridW + (offsetW*2), pokegridH);
+                };
+                pokemon3.src = "pokehashLibs/pokemons/pokemon3.png";
+               
+                let pokemon4 = new Image();
+                pokemon4.onload = function() {
+                    ctx.drawImage(pokemon4, pokegridW, pokegridH + (offsetH));
+                };
+                pokemon4.src = "pokehashLibs/pokemons/pokemon6.png";
+              
+                let pokemon5 = new Image();
+                pokemon5.onload = function() {
+                    ctx.drawImage(pokemon5, pokegridW + (offsetW),	pokegridH + (offsetH));
+                };
+                pokemon5.src = "pokehashLibs/pokemons/pokemon5.png";
+              
+                let pokemon6 = new Image();
+                pokemon6.onload = function() {
+                    ctx.drawImage(pokemon6, pokegridW + (offsetW*2), pokegridH + (offsetH));
+                };
+                pokemon6.src = "pokehashLibs/pokemons/pokemon6.png";
+    
+                // adding badges
+                let horizontal = 52;
+                let offset = 48;
+                let badge = [];
+
+                for (let j = 0; j < 8; j++) {
+                    badge[j] = loadImage('pokehashLibs/badges/kanto/kanto' + j + '.png');
+                }
+
+                for (let j = 8; j < 16; j++) {
+                    badge[j] = loadImage('pokehashLibs/badges/johto/johto' + j + '.png');
+                }
+
+
+                //!PLACEHOLDER USER SELECTION
+                let region = "Kanto";
+
+                let regionoffset = 0;
+                if(region == "Johto"){
+                    regionoffset = 8;
+                }else{
+                    regionoffset = 0;
+                }
+                for(j = 0; j < 8; j++){
+                    badge[j] = new Image();
+                    badge[j].onload = function() {
+                        ctx.drawImage(badge[j+regionoffset], horizontal + (j*offset), 380);
+                    };
+                }
+            };
+            
+            

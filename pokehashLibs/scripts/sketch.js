@@ -163,7 +163,7 @@ function draw() {
 	}
 
 }
-
+//
 // funcao PNRG que usa o hash como seed para determinar o treinador
 function CreateTrainer(name) {
 
