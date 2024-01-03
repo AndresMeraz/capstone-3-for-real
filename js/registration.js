@@ -8,6 +8,8 @@ function init(){
 
 async function registerNewUser(event) {
     event.preventDefault()
+    let regionDropdown = document.getElementById("region");
+    let selectedRegion = regionDropdown.value;
     
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
@@ -28,6 +30,7 @@ async function registerNewUser(event) {
                     username: document.getElementById("userName").value,
                     fullName: document.getElementById("fullName").value,
                     password: document.getElementById("password").value,
+                    bio: selectedRegion,
                 })
             })
             const data = await response.json();  
