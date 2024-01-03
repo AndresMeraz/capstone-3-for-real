@@ -1,3 +1,6 @@
+/* importing font */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+
 main{
     margin: 10%;
     position: relative;
