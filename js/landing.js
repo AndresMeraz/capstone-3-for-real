@@ -29,3 +29,7 @@ document.getElementById("loginBtn").addEventListener("click", function() {
 document.querySelector(".loginBox .close-btn").addEventListener("click", function() {
     document.querySelector(".loginBox").classList.remove("active");
 });
+
+function disappear() {
+    document.getElementById('showWelcomeButton').style.display="none";
+}

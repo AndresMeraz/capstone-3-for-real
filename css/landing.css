@@ -1,30 +1,21 @@
 /* Landing Page CSS */
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 
-
-          /* importing font */
-          @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-
 form {
     height: 40vw;
     width: 20vw;
     padding: 8%;
 }
 
-#loginBox {
-    display: flex;
-}
 
-/* .screen-bg {
-    flex: 1;
-} */
 #showWelcomeButton {
 
 
 /* CSS */
  position: absolute;
- top: 61.5vh;
- left: 42.5vh;
+ top: 50%;
+ left: 50%;
+ transform:translate(-50%,-50%) scale(1.25);
   background-color: #c20000;
   border: 2px solid #422800;
   border-radius: 30px;
@@ -45,7 +36,6 @@ form {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
 }
 
 .showWelcomeButton:hover {
@@ -66,6 +56,11 @@ form {
 
 .typewriter {
     flex: 1;
+    position: absolute;
+    margin-top: 5%;
+    top: 25%;
+    left: 50%;
+    transform:translate(-50%,-50%) scale(1.25);
     padding: 20px;
     margin-left: 30px;
     text-align: center;
