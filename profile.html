@@ -18,6 +18,11 @@
 
             <!--! Page-specific CSS -->
             <link rel="stylesheet" href="css/posts.css">
+            <link rel="stylesheet" href="css/global.css">
+
+            <!--! Page-specific CSS -->
+            <link rel="stylesheet" href="css/landing.css">
+        
 
             <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
             <script src="js/auth.js"></script>
@@ -83,26 +88,7 @@
 
     <body>
         <header>
-            <!-- navbar version for image replacement -->
-                <div class="container-fluid">
-                    <div class="bg-img sticky-top">
-                        <div class="container-fluid">
-                            <nav class="navbar">
-                                <a class="navbar-brand" href="login.html">
-                                    <img class="nav-image" src="images/red_button.png">
-                                    <img class="nav-image" src="images/green_button.png">
-                                    <img class="nav-image" src="images/yellow_button.png">
-                                </a>
-                                <div id="navlink">
-                                <a href="login.html" disable>Home</a>
-                                <a href="registration.html">Registration</a>
-                                <a href="posts.html">Posts</a>
-                                <a href="profile.html">Profile</a>
-                                </div>
-                            </nav>
-                        </div> 
-                    </div>
-                </div>
+            <!-- place navbar here -->
         </header>
         
         <main>
@@ -143,6 +129,21 @@
                     <!-- Posts will be displayed here -->
                 </div>
             </div>
+
+
+
+
+            <div id="profile">
+              <p id="profileName"></p>
+              <p id="profileID"></p>
+              <p id="bioLocation"></p>
+            </div>
+
+
+
+
+
+
         </main>
         <footer>
             <!-- place footer here -->

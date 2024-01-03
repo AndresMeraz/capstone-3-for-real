@@ -22,3 +22,10 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+
+document.getElementById("loginBtn").addEventListener("click", function() {
+    document.querySelector(".loginBox").classList.add("active");
+});
+document.querySelector(".loginBox .close-btn").addEventListener("click", function() {
+    document.querySelector(".loginBox").classList.remove("active");
+});
