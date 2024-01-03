@@ -1,13 +1,12 @@
-/* Posts Page CSS */
-
-/* importing font */
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-
-body{
-    color: black
-}
 
 main{
     margin: 10%;
     position: relative;
+}
+
+form {
+    height: 40vw;
+    width: 20vw;
+    padding: 8%;
 }
