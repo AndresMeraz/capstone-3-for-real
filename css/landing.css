@@ -5,3 +5,8 @@ form {
     width: 20vw;
     padding: 8%;
 }
+
+main{
+    margin: 10%;
+    position: relative;
+}
