@@ -27,6 +27,10 @@ A registration form is displayed on the screen allowing the user to fill each in
 ### Profile Page
 On load, the DisplayProfile function generates a trainer card and a fetch request retrieves the user data from the API and updates the trainer card. Profile information such as user ID, and Name is displayed as well as dynamically generated info such as trainer money, pokemon, and badges. Below the trainer card, recent Poke-posts made by the user are displayed as well as a Delete button that handles the DeleteThisPost function. This function handles the deletion of the user's post by sending a DELETE request to the API.
 
+
+![Screenshot (1158)](https://github.com/AndresMeraz/capstone-3-for-real/assets/146771873/814c2be3-8677-4afc-9c0d-056702aec237)
+
+
 ## Developers - "Team Eeveelutions"
 ![image](https://github.com/AndresMeraz/capstone-3-for-real/assets/146771873/9d6d7d7a-d6b7-4312-af2e-06c3bcf21ca6)
 
