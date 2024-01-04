@@ -99,16 +99,3 @@ function displayProfile() {
     console.log(loginData);
 }
 displayProfile()
-
-const img = document.getElementById("profile_login")
-var modal = document.getElementById("myModal");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-}
-
-const close = document.getElementById("closeModal");
-close.onclick = function() {
-    modal.style.display = "none";
-  }
-
