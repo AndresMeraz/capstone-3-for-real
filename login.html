@@ -46,33 +46,39 @@
         </header>
 
     <main>
-        <div class="center">
-            <button id="loginBtn">Login</button>
-        </div>
-        <div class="loginBox">
-            <div class="screen-bg"> 
-                <div class="close-btn">&times;</div>
-                
-                <form id="login">
-                    <div class="form-element">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" minlength="3">
-                    </div>
-    
-                    <div class="form-element">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" minlength="6">
-                    </div>
-                    
-                    <button id="loginButton" type="submit">Login</button>
-                </form>
-            </div>
-            
-        </div>
+        <div class="container-fluid">
+            <button id="showWelcomeButton" onclick="disappear()">Start</button>
             <div class="typewriter">
-            <p id="welcomeMessage"></p>
+                <p id="welcomeMessage"></p>
+            </div>
+            <div class="login">
+                <div class="center">
+                    <button id="regBtn" onclick="location.href='registration.html'">Register</button>
+                    <button id="loginBtn">Login</button>
+                </div>
+                <div class="loginBox">
+                    <div class="screen-bg"> 
+                        <div class="close-btn">&times;</div>
+                        
+                        <form id="login">
+                            <div class="form-element">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" minlength="3">
+                            </div>
+                            
+                            <div class="form-element">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" minlength="6">
+                            </div>
+                            
+                            <button id="loginButton" type="submit">Login</button>
+                            
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-        
         <script>
             const welcomeMessage = document.getElementById("welcomeMessage");
             const text = "Greetings, Trainer, and welcome to Pokeposts - the ultimate hub for sharing every thrilling step of your Pokemon journey! Connect with fellow trainers as we create a vibrant community dedicated to all things Pokemon. Whether you're a seasoned Pokemon Master or just starting your journey, Pokeposts is the place to be!"
@@ -87,7 +93,10 @@
                 setTimeout(() => textTypingEffect(element, text, i + 1), 10)
             }
 
-            textTypingEffect(welcomeMessage, text)
+            document.getElementById("showWelcomeButton").addEventListener("click", function() {
+            welcomeMessage.textContent = ""; // Clear existing text
+            textTypingEffect(welcomeMessage, text);
+            });
         </script>
 
     </main>
