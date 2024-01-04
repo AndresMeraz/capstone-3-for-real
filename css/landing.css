@@ -12,3 +12,8 @@ div#profile {
     text-align: center;
     font-size: 3.6vh;
     }
+    
+main{
+    margin: 10%;
+    position: relative;
+}

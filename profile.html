@@ -15,7 +15,9 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
             />
-            <link rel="stylesheet" href="css/style.css">
+
+            <!--! Page-specific CSS -->
+            <link rel="stylesheet" href="css/posts.css">
             <link rel="stylesheet" href="css/global.css">
 
             <!--! Page-specific CSS -->
@@ -24,39 +26,126 @@
 
             <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
             <script src="js/auth.js"></script>
+
+            <!-- Global CSS (CSS rules you want applied to all pages) -->
+            <link rel="stylesheet" href="css/global.css">
+
+            <script>
+                if (isLoggedIn() === false) window.location.replace("login.html");
+            </script>
+
+        <style>
+            main {
+                padding-top: 5%;
+            }
+            body{
+                color: #402F25;
+            }
+            #hero{
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+            }
+            #createPost{
+                margin: auto;
+                margin-left: 15%;
+            }
+
+            #newPost{
+                border-color: #6C584C;
+                border-width: 10px;
+                width: 35%;
+                background-color: #CEB191;
+            }
+            .btn {
+                text-decoration: none;
+                color:#F8ECBA;
+                background: #402F25;
+                padding: 15px 40px;
+                border-radius: 4px;
+                text-transform: uppercase;
+                transition: all 0.4s ease-in-out;
+                box-shadow: 0 5px 15px rgba(255, 0, 0, 0.433);
+            }
+            .btn:hover {
+                background-color: #6C584C;
+                color: #FFFBFF;
+                box-shadow: 0 5px 15px #319C25;
+                /* padding: %; */
+            }
+            #trainerCanvas{
+                box-shadow: 0 5px 15px #475942;
+                border-radius: 10px;
+                width: 55%;
+                max-width: 500px;
+            }
+
+
+            
+        </style>
+
     </head>
 
     <body>
         <header>
-            <header>
-                <!-- navbar version for image replacement -->
-                      <div class="container-fluid">
-                        <div class="bg-img sticky-top">
-                          <div class="container-fluid">
-                            <nav class="navbar">
-                              <a class="navbar-brand" href="login.html">
-                                  <img class="nav-image" src="images/red_button.png">
-                                  <img class="nav-image" src="images/green_button.png">
-                                  <img class="nav-image" src="images/yellow_button.png">
+            <div class="container-fluid">
+                <div class="bg-img sticky-top">
+                    <div class="container-fluid">
+                        <nav class="navbar">
+                            <a class="navbar-brand" href="login.html">
+                                <img class="nav-image" src="images/red_button.png">
+                                <img class="nav-image" src="images/green_button.png">
+                                <img class="nav-image" src="images/yellow_button.png">
                             </a>
-                              <div id="navlink">
-                                <a href="login.html">Home</a>
-                                <a href="registration.html">Registration</a>
-                                <a href="posts.html">Posts</a>
-                                <a href="profile.html">Profile</a>
-                              </div>
-                            </nav>
-                          </div> 
-                          <div class="profile"> <div id="profile"></div>
-                         <button id="logoutBtn" onclick="callLogout()">Logout</button></div>
-                        </div>
-                        
-                      </div>
-              </header>
+                            <div id="navlink">
+                            <a href="login.html" disable>Home</a>
+                            <a href="registration.html">Registration</a>
+                            <a href="posts.html">Posts</a>
+                            <a href="profile.html">Profile</a>
+                            </div>
+                        </nav>
+                    </div> 
+                </div>
+            </div>
         </header>
+        
         <main>
-            <div id="postList" class="mt-4">
-                <!-- Posts will be displayed here -->
+            <div class="container d-flex flex-row m-2" id="hero">
+                
+                <!-- User profile card -->
+                <canvas id="trainerCanvas" width="456" height="432">
+                    <img id="trainerCard" width="456" height="432" src="images/trainerCard.png" alt="Trainer Card">
+                </canvas>
+            
+                <!-- New Post Section -->
+                <div id="createPost">                
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#newPost" aria-controls="newPost">Create New Post</button>
+                    
+                    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="newPost" aria-labelledby="newPostLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="profileName">New Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <form id="postForm" class="mt-4">
+                            <div class="mb-3">
+                                <label for="postText" class="form-label">Blog Text</label>
+                                <textarea class="form-control" id="postText" name="text" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            
+            </div>
+
+            <div style="padding-top: 10%;">
+                <h3>Recent Posts:</h3>
+                <div id="postList" class="mt-4">
+                    <!-- Posts will be displayed here -->
+                </div>
             </div>
 
 
@@ -89,6 +178,8 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        <!-- !page specific scripts -->
         <script src="js/profile.js"></script>
     </body>
 </html>
