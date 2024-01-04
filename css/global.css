@@ -107,12 +107,11 @@
             display: flex;
             float: left;
             background-color: rgba(0, 0, 0, 0);
-            position: relative;
+            /* position: relative; */
             padding: 2%;
             min-height: 100px;
-
             /* margin: auto; */
-            font-size: 3vw;
+            font-size: 3.5rem;
             align-items: center;
             /* max-width: fit-content; */
             /* min-height: fit-content;
@@ -122,12 +121,9 @@
         .navbar-brand {
             float: left;
             text-align: center;
-            /* padding: 10px; */
             padding-inline: 10px;
             text-decoration: none;
-            /* font-size: 200%; */
             position: relative;
-            /* size: auto; */
         }
 
         /* Navbar links */
@@ -167,4 +163,11 @@
             min-height: 286px;
         }
 
-        
+        .nav{
+            min-width: 130px;
+            min-height: 445px;
+        }
+
+        #navContainer{
+            min-width: 20vw;
+        }

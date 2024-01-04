@@ -5,7 +5,7 @@
 
 body{
     color: black;
-    margin-top: 8.5%;
+    margin-top:  180px;
     
 }
 
@@ -79,7 +79,7 @@ textarea#postText.form-control {
     padding-top: 15%;
     padding-right: 10px;
     width: 4vw;
-    min-width: 30px;
+    min-width: 70px;
     object-fit: contain;
 }
 
