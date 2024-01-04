@@ -40,8 +40,11 @@ On load, the DisplayProfile function generates a trainer card and a fetch reques
 #### Victor Padilla - https://github.com/VictorPadilla0861
 #### Esther W Ajayi - https://github.com/EWAjayi
 
-# Enjoy the Microblog Project and the MicroblogLite API!
+## Acknowledgements
+Enjoy the Microblog Project and the MicroblogLite API [*MicroblogLite* API docs](https://microbloglite.herokuapp.com/docs/) 
 
-Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.herokuapp.com/docs/) and experiment with the API in *Postman!*
+Icons by https://icons8.com/
 
-Practice and experimentation provide experience, and experience provides confidence.
+Trainer Card and Poke Data by https://xandjiji.github.io/pokehash/
+
+
