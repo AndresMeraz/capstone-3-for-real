@@ -20,10 +20,6 @@
             <link rel="stylesheet" href="css/posts.css">
             <link rel="stylesheet" href="css/global.css">
 
-            <!--! Page-specific CSS -->
-            <link rel="stylesheet" href="css/landing.css">
-        
-
             <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
             <script src="js/auth.js"></script>
 
@@ -97,11 +93,22 @@
                                 <img class="nav-image" src="images/green_button.png">
                                 <img class="nav-image" src="images/yellow_button.png">
                             </a>
-                            <div id="navlink">
+                            <!-- <div id="navlink">
                             <a href="login.html" disable>Home</a>
                             <a href="registration.html">Registration</a>
                             <a href="posts.html">Posts</a>
                             <a href="profile.html">Profile</a>
+                            </div> -->
+                            <div id="navlink">
+                                <img src="images/pokeball_icon.png" onclick="location.href='login.html'" alt="pokeball icon">
+                                <a onclick="location.href='login.html'">PokéPost</a>
+                                <!-- <a href="registration.html">Registration</a>
+                                <a href="posts.html">Posts</a>
+                                <a href="profile.html">Profile</a> -->
+                            </div>
+                            <div class="profile"> 
+                                <a href="profile.html" id="profile"> </a>
+                                <button id="logoutBtn" onclick="callLogout()">Save & Quit</button>
                             </div>
                         </nav>
                     </div> 

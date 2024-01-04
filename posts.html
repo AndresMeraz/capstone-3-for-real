@@ -12,7 +12,6 @@
     crossorigin="anonymous"/>
 
     <!--! Page-specific CSS -->
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/posts.css">
     
     <!-- Global CSS (CSS rules you want applied to all pages) -->
@@ -48,16 +47,25 @@
                               <img class="nav-image" src="images/green_button.png">
                               <img class="nav-image" src="images/yellow_button.png">
                         </a>
-                          <div id="navlink">
+                          <!-- <div id="navlink">
                             <a href="login.html">Home</a>
                             <a href="registration.html">Registration</a>
                             <a href="posts.html">Posts</a>
                             <a href="profile.html">Profile</a>
+                          </div> -->
+                          <div id="navlink">
+                            <img src="images/pokeball_icon.png" onclick="location.href='login.html'" alt="pokeball icon">
+                            <a onclick="location.href='login.html'">PokéPost</a>
+                            <!-- <a href="registration.html">Registration</a>
+                            <a href="posts.html">Posts</a>
+                            <a href="profile.html">Profile</a> -->
                           </div>
                         </nav>
                     </div> 
-                    <div class="profile"> <div id="profile"> </div>
-                    <button id="logoutBtn" onclick="callLogout()">Logout</button></div>
+                    <div class="profile"> 
+                        <a href="profile.html" id="profile"> </a>
+                        <button id="logoutBtn" onclick="callLogout()">Save & Quit</button>
+                    </div>
                    
                 </div>
                   </div>
