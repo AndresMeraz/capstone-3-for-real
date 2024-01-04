@@ -12,6 +12,9 @@ On load, the page confirms whether or not the user is logged in. If they aren't,
 ### Registration Page
 A registration form is displayed on the screen allowing the user to fill each input field with their information. This includes the user's name, username, email, and password with confirmation, as well as a poke region. After submitting, the RegisterNewUser function retrieves the values from the form elements and first confirms that the passwords match, displaying an alert and denying the logic execution if they do not. If the passwords match, a POST request is sent to the user API, and the user is registered. the user is then redirected to the login page.
 
+### Profile Page
+On load, the DisplayProfile function generates a trainer card and a fetch request retrieves the user data from the API and updates the trainer card. Profile information such as user ID, and Name is displayed as well as dynamically generated info such as trainer money, pokemon, and badges. Below the trainer card, recent Poke-posts made by the user are displayed as well as a Delete button that handles the DeleteThisPost function. This function handles the deletion of the users post by sending a DELETE request to the API.
+
 
 
 # Enjoy the Microblog Project and the MicroblogLite API!
