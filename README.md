@@ -19,10 +19,10 @@ On load, the DisplayProfile function generates a trainer card and a fetch reques
 ![image](https://github.com/AndresMeraz/capstone-3-for-real/assets/146771873/9d6d7d7a-d6b7-4312-af2e-06c3bcf21ca6)
 
 
-Andrez Meraz - https://github.com/AndresMeraz
-Justine Elbuhel - https://github.com/JustineElbuhel
-Victor Padilla - https://github.com/VictorPadilla0861
-Esther W Ajayi - https://github.com/EWAjayi
+#### Andrez Meraz - https://github.com/AndresMeraz
+#### Justine Elbuhel - https://github.com/JustineElbuhel
+#### Victor Padilla - https://github.com/VictorPadilla0861
+#### Esther W Ajayi - https://github.com/EWAjayi
 
 # Enjoy the Microblog Project and the MicroblogLite API!
 
