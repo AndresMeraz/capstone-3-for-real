@@ -14,7 +14,6 @@ const trainercard = [{
     'id': '',
     'name': '',
 	'region': '',
-	'hometown': '',
 	'money': '',
 	'pokedex': '',
 	'badges': '',
@@ -31,10 +30,6 @@ const trainercard = [{
 let trainer = [];
 var pokemon = [];
 var badge = [];
-
-// initializinf variables
-let myFont;
-let card;
 
 //pulling file location for images
 function loadImage(src) {
@@ -229,6 +224,9 @@ function preload() {
             ctx.fillText("REGION: " + region, 45, 138);
             ctx.fillText("MONEY: $" + money, 45, 170);
             ctx.fillText("POKEDéX: " + pokedex, 45, 202);
+
+        }).catch(function(error) {
+            console.error('Font could not be loaded:', error);
         })
 
     }
@@ -317,7 +315,7 @@ function draw(ctx) {
             ctx.drawImage(trainerImg, 260, 170 )
         }
 
-    //? adding badges
+    // adding badges
         //setting coordinates
         let horizontal = 52;
         let offset = 48;
@@ -336,8 +334,14 @@ function draw(ctx) {
         //loading badges async
             let pokeBadges = [];
 
-            for (let j = 0; j < 8; j++) {
-                pokeBadges.push(loadBadge(j + regionoffset, horizontal + (j*offset), 380, ctx));
+            for (let i = 0; i < 8; i++) {
+                badge[i] = loadImage('../pokehashLibs/badges/kanto/kanto' + i + '.png');
+                pokeBadges.push(loadBadge(i + regionoffset, horizontal + (i*offset), 380, ctx));
+            }
+
+            for(let i = 8; i < 16; i++){
+		    badge[i] = loadImage('../pokehashLibs/badges/johto/johto' + i + '.png');
+                pokeBadges.push(loadBadge(i + regionoffset, horizontal + (i*offset), 380, ctx));
             }
 
             Promise.all(pokeBadges).then(() => {
@@ -346,27 +350,12 @@ function draw(ctx) {
             
             function loadBadge(i, x, y, ctx) {
                 return new Promise((resolve, reject) =>{
-                    badge[i] = loadImage('./pokehashLibs/badges/kanto/kanto' + i + '.png');
                     badge[i].onload = function() {
                         ctx.drawImage(badge[i], x, y);
                         resolve();
                     };
                 });
             }
-
-        // for (let j = 0; j < 8; j++) {
-        //     badge[j] = loadImage('pokehashLibs/badges/kanto/kanto' + j + '.png');
-        // }
-        
-        // for (let j = 8; j < 16; j++) {
-        //     badge[j] = loadImage('pokehashLibs/badges/johto/johto' + j + '.png');
-        // }
-        // for(let j = 0; j < 8; j++){
-        //     badge[j] = new Image();
-        //     badge[j].onload = function() {
-        //         ctx.drawImage(badge[j+regionoffset], horizontal + (j*offset), 380);
-        //     };
-        // }
 };
 
 function CreateTrainer(name) {
@@ -375,7 +364,6 @@ function CreateTrainer(name) {
         
         trainercard.name		= name;
         // trainercard.region		= getRegion(data.bio);
-        // trainercard.hometown	= cities[		(parseInt('0x' + hash.substring(0, 4)) % 20)];
         trainercard.money		= 			(parseInt('0x' + hash.substring(5, 9)));
         trainercard.pokedex		= 			(parseInt('0x' + hash.substring(10, 14)) % 252);
         trainercard.badges		= 			(parseInt('0x' + hash.substring(15, 19)) % 9);
