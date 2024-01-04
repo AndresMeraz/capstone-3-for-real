@@ -32,4 +32,5 @@ document.querySelector(".loginBox .close-btn").addEventListener("click", functio
 
 function disappear() {
     document.getElementById('showWelcomeButton').style.display="none";
+    
 }
