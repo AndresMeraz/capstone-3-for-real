@@ -1,5 +1,8 @@
 /* Global CSS for all pages */
 
+        /* importing font */
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+
 * {
     /* Sizing helper: See Workbook 1b, page 2-33. */
     box-sizing: border-box;
@@ -18,9 +21,6 @@
 }
 
 
-        /* importing font */
-        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
-
         /* css for color testing */
         body{
             background-color: #E9DAC5 ;
@@ -34,11 +34,12 @@
             position: relative;
         } */
         .center {
+            margin-top: 5%;
+            width: 100%;
+            left: 29%;
             display: none;
             justify-content: space-between;
             position:absolute;
-            top: 50%;
-            left: 50%;
             transform:translate(-50%,-50%)
         
         }
@@ -162,4 +163,8 @@
             height: 33vw;
             width: 30vw;
             background-size: cover;
+            min-width: 254px;
+            min-height: 286px;
         }
+
+        

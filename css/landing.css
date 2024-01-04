@@ -11,6 +11,11 @@ form {
     padding: 8%;
 }
 
+#welcomeMessage{
+    margin-top: 13%;
+}
+
+
 
 #showWelcomeButton {
 /* CSS */
@@ -50,6 +55,7 @@ form {
 }
 
 #loginBtn, #regBtn {
+  width:25%;
   background-color: #c20000;
   border: 2px solid #422800;
   border-radius: 30px;
@@ -73,6 +79,22 @@ form {
   touch-action: manipulation;
 }
 
+/* Media Query for smaller screens */
+@media (max-width: 960px) {
+  #loginBtn {
+    width:100%; margin-bottom: 6%;
+  }
+
+  #regBtn {
+    width: 100%;
+  }
+
+  .center{
+    padding-left: 45%;
+    margin-top:12%;
+  }
+}
+
 @media (min-width: 768px) {
   .showWelcomeButton {
     min-width: 120px;
@@ -81,6 +103,7 @@ form {
 }
 
 .typewriter {
+    height: 25vh;
     flex: 1;
     position: absolute;
     margin-top: 5%;
