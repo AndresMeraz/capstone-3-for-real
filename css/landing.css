@@ -1,6 +1,10 @@
 /* Landing Page CSS */
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 
+main {
+  color: silver;
+}
+
 form {
     height: 40vw;
     width: 20vw;
