@@ -16,3 +16,12 @@ form {
     width: auto
 }
 
+.screen-bg{
+    background-image: url("../images/screen.png");
+    background-repeat: no-repeat;
+    height: 33vw;
+    width: 30vw;
+    background-size: cover;
+    min-height: 533px;
+    min-width: 480px;
+}
