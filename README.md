@@ -11,7 +11,7 @@ Upon opening, the page calls Login DAta to check and see if the user is already 
 
 
 ### Posts Page
-On load, the page confirms whether or not the user is logged in. If they aren't, they will be redirected to the login page. At the top of the page is a submittable form the user can fill out to create a poke-post. After submitting, a POST request to the API with the post text and the user's token. If successful, the Poke-post is displayed below through a GET request along with the Poke-posts from other users. 
+On load, the page confirms whether or not the user is logged in. If they aren't, they will be redirected to the login page. At the top of the page is a submittable form the user can fill out to create a poke-post. After submitting, a POST request to the API with the post text and the user's token. If successful, the Poke-post is displayed below through a GET request along with the Poke-posts from other users. Clicking the Pokeball icon in the top right corner of the page displays a modal with three buttons including the user button that redirects the user to their profile page, a save and quit button that logs the user out and redirects them to the login page, and a close button to close the modal display.
 
 
 ![Screenshot (1156)](https://github.com/AndresMeraz/capstone-3-for-real/assets/146771873/cae1d7bc-e393-43e7-95fd-5122850f8513)
