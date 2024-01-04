@@ -6,10 +6,8 @@ window.onload = function() {
     const ctx = canvas.getContext("2d");
     const img = document.getElementById("trainerCard");
     ctx.drawImage(img, 0, 0);
-
-    
-    
     draw(ctx);
+    textFont(myFont);
 };
 
 const trainercard = [{
@@ -26,7 +24,36 @@ const trainercard = [{
 	'pokemon3': '',
 	'pokemon4': '',
 	'pokemon5': '',
-	'pokemon6': ''}]
+	'pokemon6': ''
+}]
+
+// preload
+function preload() {
+
+	// Load trainer images
+	for (i = 0; i < 107; i++){
+		trainer[i] = loadImage('trainers/trainer' + i + '.png');
+	}
+
+	// Load pokemon images
+	for (i = 0; i < 252; i++){
+		pokemon[i] = loadImage('pokemons/pokemon' + i + '.png')
+	}
+
+	// Load Kanto badges
+	for(i = 0; i < 8; i++){
+		badge[i] = loadImage('badges/kanto/kanto' + i + '.png');
+	}
+
+	// Load Johto badges
+	for(i = 8; i < 16; i++){
+		badge[i] = loadImage('badges/johto/johto' + i + '.png');
+	}
+
+	// Load Font
+	myFont = loadFont("pokehashKLibs/pokedex.ttf");
+
+}
     
 function getLoginData(){
     const loginJSON = window.localStorage.getItem("login-data");
@@ -292,18 +319,6 @@ function draw(ctx) {
         };
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 function CreateTrainer(name) {
     
