@@ -25,7 +25,14 @@ loginForm.onsubmit = function (event) {
 
 document.getElementById("loginBtn").addEventListener("click", function() {
     document.querySelector(".loginBox").classList.add("active");
+    document.getElementById("welcomeMessage").style.display="none";
 });
 document.querySelector(".loginBox .close-btn").addEventListener("click", function() {
     document.querySelector(".loginBox").classList.remove("active");
 });
+
+function disappear() {
+    document.getElementById('showWelcomeButton').style.display="none";
+    setTimeout(function(){document.querySelector('.center').style.display="block";}, 3500)
+    
+}

@@ -1,19 +1,96 @@
 /* Landing Page CSS */
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
 
-
 form {
     height: 40vw;
     width: 20vw;
     padding: 8%;
 }
 
-div#profile {
+
+#showWelcomeButton {
+
+
+/* CSS */
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform:translate(-50%,-50%) scale(1.25);
+  background-color: #c20000;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  /* size: 1vh; */
+  min-width: 9%;
+  min-height: 9%;
+  size: -3vh; 
+    font-weight: 600; 
+   font-size: 20px;  
+   padding: 0 18px;
+  float: right;
+  /* line-height: 50px;  */
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.showWelcomeButton:hover {
+  background-color: #fff;
+}
+
+.showWelcomeButton:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+#loginBtn, #regBtn {
+  background-color: #c20000;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  /* size: 1vh; */
+  min-width: 9%;
+  min-height: 9%;
+  size: -3vh; 
+    font-weight: 600; 
+   font-size: 20px;  
+   padding: 0 18px;
+   margin: 0 10px;
+  float: right;
+  /* line-height: 50px;  */
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+@media (min-width: 768px) {
+  .showWelcomeButton {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+.typewriter {
+    flex: 1;
+    position: absolute;
+    margin-top: 5%;
+    top: 25%;
+    left: 50%;
+    transform:translate(-50%,-50%) scale(1.25);
+    padding: 20px;
+    margin-left: 30px;
     text-align: center;
-    font-size: 3.6vh;
-    }
-    
-main{
-    margin: 10%;
-    position: relative;
+    color: black;
+    font-size: large;
+    font-family: 'Pixelify Sans';
+    letter-spacing: 3px;
+    font-size: 1.4em;
 }
