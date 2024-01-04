@@ -17,6 +17,8 @@ On load, the DisplayProfile function generates a trainer card and a fetch reques
 
 ## Developers - "Team Eeveelutions"
 ![image](https://github.com/AndresMeraz/capstone-3-for-real/assets/146771873/9d6d7d7a-d6b7-4312-af2e-06c3bcf21ca6)
+
+
 Andrez Meraz - https://github.com/AndresMeraz
 Justine Elbuhel - https://github.com/JustineElbuhel
 Victor Padilla - https://github.com/VictorPadilla0861
