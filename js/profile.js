@@ -238,28 +238,28 @@ function preload() {
             return "Johto"
         }
         else if(region == "Hoenn"){
-            return "Hoenn"
+            return "Kanto"
         }
         else if(region == "Sinnoh"){
-            return "Sinnoh"
+            return "Johto"
         }
         else if(region == "Unova"){
-            return "Unova"
+            return "Kanto"
         }
         else if(region == "Kalos"){
-            return "Kalos"
+            return "Johto"
         }
         else if(region == "Alola"){
-            return "Alola"
+            return "Kanto"
         }
         else if(region == "Galar"){
-            return "Galar"
+            return "Johto"
         }
         else if(region == "Paldea"){
-            return "Paldea"
+            return "Kanto"
         }
         else{ //!currently for testing purposes. Should be "undisclosed"
-            return "Kanto"
+            return "Johto"
         }
     }
 
@@ -492,3 +492,49 @@ close.onclick = function() {
   }
 
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const postForm = document.getElementById("postForm");
+    const postText = document.getElementById("postText");
+    const postResult = document.getElementById("postResult");
+    
+    postForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const loginData = getLoginData();
+        
+        console.log(loginData);
+        const formData = {
+            text: postText.value
+        };
+
+        // Fetch to post data to the API endpoint
+        fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${loginData.token}`,
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(result => {
+            // Display the result on the screen
+            const postResultHTML = `
+                <div class="alert alert-success">
+                    <p>Blog Posted Successfully:</p>
+                    <p><strong>Text:</strong> ${result.text}</p>
+                    <p><strong>Posted by:</strong> ${result.username}</p>
+                    <p><strong>Created At:</strong> ${new Date(result.createdAt).toLocaleString()}</p>
+                </div>
+            `;
+            postResult.innerHTML = postResultHTML;
+
+            // Clear the form input
+            postText.value = "";
+        })
+        .catch(error => {
+            console.error("Error posting data:", error);
+            postResult.innerHTML = `<div class="alert alert-danger">Error posting blog: ${error.message}</div>`;
+        });
+    });
+});
