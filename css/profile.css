@@ -1,0 +1,52 @@
+main {
+    padding-top: 5%;
+}
+body{
+    color: #402F25;
+
+}
+#hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+#createPost{
+    margin: auto;
+    /* margin-left: 50%; */
+}
+
+#newPost{
+    border-color: #6C584C;
+    border-width: 10px;
+    width: 35%;
+    background-color: #CEB191;
+}
+
+#newPostBtn{
+    width: 150%;
+}
+
+.btn {
+    text-decoration: none;
+    color:#F8ECBA;
+    background: #402F25;
+    padding: 15px 40px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.433);
+}
+.btn:hover {
+    background-color: #6C584C;
+    color: #FFFBFF;
+    box-shadow: 0 5px 15px #319C25;
+    /* padding: %; */
+}
+#trainerCanvas{
+    box-shadow: 0 5px 15px #475942;
+    border-radius: 10px;
+    width: 55%;
+    max-width: 500px;
+}

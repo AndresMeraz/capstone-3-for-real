@@ -16,8 +16,9 @@
             crossorigin="anonymous"
             />
 
-            <!--! Page-specific CSS -->
+            <!-- Page-specific CSS -->
             <link rel="stylesheet" href="css/posts.css">
+            <link rel="stylesheet" href="css/profile.css">
             <link rel="stylesheet" href="css/global.css">
 
             <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
@@ -29,61 +30,6 @@
             <script>
                 if (isLoggedIn() === false) window.location.replace("login.html");
             </script>
-
-        <style>
-
-            @import url('pokehashLibs/pokedex.ttf');
-
-            main {
-                padding-top: 5%;
-            }
-            body{
-                color: #402F25;
-
-            }
-            #hero{
-                justify-content: center;
-                align-items: center;
-                margin: auto;
-            }
-            #createPost{
-                margin: auto;
-                margin-left: 15%;
-            }
-
-            #newPost{
-                border-color: #6C584C;
-                border-width: 10px;
-                width: 35%;
-                background-color: #CEB191;
-            }
-            .btn {
-                text-decoration: none;
-                color:#F8ECBA;
-                background: #402F25;
-                padding: 15px 40px;
-                border-radius: 4px;
-                text-transform: uppercase;
-                transition: all 0.4s ease-in-out;
-                box-shadow: 0 5px 15px rgba(255, 0, 0, 0.433);
-            }
-            .btn:hover {
-                background-color: #6C584C;
-                color: #FFFBFF;
-                box-shadow: 0 5px 15px #319C25;
-                /* padding: %; */
-            }
-            #trainerCanvas{
-                box-shadow: 0 5px 15px #475942;
-                border-radius: 10px;
-                width: 55%;
-                max-width: 500px;
-            }
-
-
-            
-        </style>
-
     </head>
 
     <body>
@@ -112,7 +58,7 @@
           </header>
         
         <main>
-            <div class="container d-flex flex-row m-2" id="hero">
+            <div class="container flex-row m-2" id="hero">
                 
                 <!-- User profile card -->
                 <canvas id="trainerCanvas" width="456" height="432">
@@ -121,37 +67,37 @@
             
                 <!-- New Post Section -->
                 <div id="createPost">                
-                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#newPost" aria-controls="newPost">Create New Post</button>
+                    <button class="btn" id="newPostBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#newPost" aria-controls="newPost">Create New Post</button>
                     
                     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="newPost" aria-labelledby="newPostLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="profileName">New Post</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <form id="postForm" class="mt-4">
-                            <div class="mb-3">
-                                <label for="postText" class="form-label">Blog Text</label>
-                                <textarea class="form-control" id="postText" name="text" rows="4" required></textarea>
+                        </div>
+                        <div class="offcanvas-body justify-content-center">
+                            <form id="postForm" class="mt-4">
+                                <div class="mb-3">
+                                    <label for="postText" class="form-label"></label>
+                                    <textarea class="form-control" id="postText" name="text" rows="4" placeholder="What's new, Pikachu?" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post</button>
+                            </form>
+                            <div id="postResult" class="mt-4">
+                                <!-- Post result will be displayed here -->
                             </div>
-                            <button type="submit" class="btn btn-primary">Post</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            
             </div>
 
             <div style="padding-top: 10%;">
-                <h3>Recent Posts:</h3>
-                <div id="postList" class="mt-4">
-                    <!-- Posts will be displayed here -->
+                <div class="container mt-4">
+                    <h3>Recent PokePosts:</h3>
+                    <div id="postList" class="mt-4">
+                        <!-- Posts will be displayed here -->
+                    </div>
                 </div>
             </div>
-
-
-
 
     <!-- Modal -->
     <div id="myModal" class="modal">
@@ -184,7 +130,7 @@
             crossorigin="anonymous"
         ></script>
 
-        <!-- !page specific scripts -->
+        <!-- page specific scripts -->
         <script src="js/profile.js"></script>
     </body>
 </html>
